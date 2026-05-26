@@ -1,0 +1,214 @@
+---
+
+# Folder Structure
+
+```text id="4y5dbq"
+terraform/
+ └── basics/
+      ├── 01-provider/
+      ├── 02-resource-block/
+      ├── 03-init/
+      ├── 04-plan/
+      ├── 05-apply/
+      ├── 06-destroy/
+      ├── 07-state-file/
+      ├── 08-comments/
+      └── README.md
+```
+
+
+# `terraform/basics/README.md`
+
+```md id="4x2rkp"
+# Terraform Basics
+
+This section contains Terraform basic concepts:
+
+- Provider
+- Resource Block
+- Terraform Init
+- Terraform Plan
+- Terraform Apply
+- Terraform Destroy
+- Terraform State File
+- Terraform Comments
+```
+
+---
+
+# `01-provider/main.tf`
+
+terraform {
+
+  required_providers {
+
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~>4.0"
+    }
+
+  }
+
+}
+
+provider "azurerm" {
+
+  features {}
+
+  subscription_id = "YOUR_SUBSCRIPTION_ID"
+
+}
+```
+
+---
+
+# `01-provider/README.md`
+
+```md id="0fd0sj"
+# Provider
+
+Provider is responsible for interacting with APIs.
+
+Example:
+- AzureRM
+- AWS
+- Google Cloud
+```
+
+---
+
+# `02-resource-block/main.tf`
+resource "azurerm_resource_group" "RG" {
+
+  name     = "vikas-rg"
+  location = "westus"
+
+}
+```
+
+---
+
+# `02-resource-block/README.md`
+
+```md id="k5xq3j"
+# Resource Block
+
+A resource block is used to create infrastructure resources.
+```
+
+---
+
+# `03-init/README.md`
+
+```md id="6lpnct"
+# Terraform Init
+
+Command:
+terraform init
+
+Purpose:
+- Downloads providers
+- Initializes Terraform working directory
+```
+
+---
+
+# `04-plan/README.md`
+
+```md id="8ubtvj"
+# Terraform Plan
+
+Command:
+terraform plan
+
+Purpose:
+- Shows execution preview
+- Dry run before apply
+```
+
+---
+
+# `05-apply/README.md`
+
+```md id="2v7j59"
+# Terraform Apply
+
+Command:
+terraform apply
+
+Purpose:
+- Creates infrastructure
+```
+
+---
+
+# `06-destroy/README.md`
+
+```md id="6dujlwm"
+# Terraform Destroy
+
+Command:
+terraform destroy
+
+Purpose:
+- Deletes infrastructure
+```
+
+---
+
+# `07-state-file/README.md`
+
+```md id="7qgq94"
+# Terraform State File
+
+Terraform stores infrastructure details inside:
+terraform.tfstate
+
+Purpose:
+- Tracks resources
+- Maintains infrastructure state
+```
+
+---
+
+# `08-comments/main.tf`
+
+```hcl id="2m7a7j"
+# Single line comment
+
+/*
+Multi-line
+comment
+*/
+
+resource "azurerm_resource_group" "RG" {
+
+  name     = "comment-rg"
+  location = "westus"
+
+}
+```
+
+---
+
+# `08-comments/README.md`
+
+```md id="4bn98t"
+# Terraform Comments
+
+Terraform supports:
+- Single-line comments
+- Multi-line comments
+```
+
+---
+
+# Final Push
+
+```bash id="5t8njlwm"
+git add .
+git commit -m "Added Terraform basics structure"
+git push
+```
+
+
