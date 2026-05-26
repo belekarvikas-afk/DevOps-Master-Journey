@@ -1,5 +1,3 @@
-Ye tumhare `DevOps-Master-Journey` repo ke liye professional README content 🚀
-
 # DevOps Master Journey 🚀☁️
 
 Welcome to the official **DevOps Master Journey** repository!
